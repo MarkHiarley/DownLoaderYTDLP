@@ -1,19 +1,33 @@
 {
-  "devDependencies": {
-    "@types/node": "^22.10.1",
-    "typescript": "^5.7.2"
-  },
-  "name": "baixador-de-video",
+  "name": "downloaderytdlp",
   "version": "1.0.0",
-  "main": "index.js",
-  "dependencies": {
-    "undici-types": "^6.20.0"
-  },
+  "description": "",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node src/app.ts",
+    "build": "tsc",
+    "start": "node dist/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarkHiarley/DownLoaderYTDLP.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/MarkHiarley/DownLoaderYTDLP/issues"
+  },
+  "homepage": "https://github.com/MarkHiarley/DownLoaderYTDLP#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "fastify": "^5.4.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.13",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
 }
