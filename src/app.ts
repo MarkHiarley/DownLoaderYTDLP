@@ -1,20 +1,30 @@
 import Fastify from 'fastify';
+import downloadVideo from './route/donwload';
+import cors from '@fastify/cors';
 
-const app = Fastify();
+const fastify = Fastify({ logger: true });
 
-app.get('/', async (request, reply) => {
+fastify.register(cors, {
+  origin: true,
+});
+
+fastify.get('/', async (request, reply) => {
   return { message: 'Hello, World!' };
 });
 
+fastify.register(downloadVideo);
+
 const start = async () => {
   try {
-    await app.listen({ port: 3000, host: '0.0.0.0' });
+    await fastify.listen({ port: 3000});
     console.log('Servidor está rodando em http://localhost:3000');
   } catch (error) {
     console.error('Erro ao iniciar o servidor:', error);
     process.exit(1);
   }
 };
+
 start();
+
 
 
